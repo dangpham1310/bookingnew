@@ -1,0 +1,57 @@
+/* register.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #007bff; /* Màu xanh dương */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #007bff; /* Màu xanh dương */
+  color: #fff;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3; /* Màu xanh dương nhạt */
+}
+
+.flash {
+  color: #dc3545; /* Màu đỏ cam */
+}
+
+a {
+  text-decoration: none;
+  color: #007bff; /* Màu xanh dương */
+}
+
+a:hover {
+  text-decoration: underline;
+}

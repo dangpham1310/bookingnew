@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Restaurant Booking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">BOOKINGS <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <div class="search-box wpo-wrapper-search">
+                <form action="search" class="searchform searchform-categoris ultimate-search">
+                  <div class="wpo-search-inner" style="display:inline">
+                    <input type="hidden" name="type" value="product">
+                    <input required="" id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
+                      class="searchinput input-search search-input" type="text" size="20"
+                      placeholder="Tìm kiếm nhà hàng...">
+                  </div>
+                  <button type="submit" class="btn-search btn" id="search-header-btn">
+                    <i style="font-weight:bold" class="fas fa-search"></i>
+                  </button>
+                </form>
+                <div id="ajaxSearchResults" class="smart-search-wrapper ajaxSearchResults" style="display: none">
+                  <div class="resultsContent"></div>
+                </div>
+            </div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">ĐĂNG NHẬP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">ĐĂNG KÝ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner  -->
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{{ url_for('static', filename='images/booking_restaurant_banner.png') }}" alt="Banner" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Welcome to Restaurant Booking</h1>
+
+        <!-- <h2>Bookings</h2>
+        <ul class="list-group">
+            {% for booking in bookings %}
+                <li class="list-group-item">{{ booking[1] }} - {{ booking[2] }} - {{ booking[3] }} - {{ booking[4] }} people</li>
+            {% endfor %}
+        </ul>
+
+        <h2 class="mt-4">Book a Table</h2>
+        <form action="/book" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" class="form-control" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" class="form-control" name="time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="people">Number of People:</label>
+                <input type="number" class="form-control" name="people" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Book</button>
+        </form>
+    </div> -->
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-wrapper">
+                    <div class="wrapbox-content-page">
+                        <div class="content-page ">
+                            <p>Chào mừng đến với Booking Restaurant - Nơi hội tụ ẩm thực độc đáo và trải nghiệm đặt bàn thuận tiện.</p>
+                            <p>Tại Booking Restaurant, chúng tôi mang đến cho bạn không gian ấm cúng và thân thiện, nơi bạn có thể thưởng thức những bữa ăn tuyệt vời cùng gia đình và bạn bè.</p>
+                            <p>Với hệ thống đặt bàn trực tuyến tiện lợi, bạn có thể dễ dàng chọn lựa thời gian và bàn ưa thích của mình. Chúng tôi cam kết đảm bảo mọi bữa ăn của bạn trở thành một trải nghiệm đặc biệt, từ không gian sang trọng đến dịch vụ chuyên nghiệp.</p>
+                            <p>Khám phá thế giới của hương vị tinh tế và sự phục vụ tận tâm tại Booking Restaurant. Đặt ngay hôm nay để trải nghiệm niềm vui của việc dùng trưa hoặc tối tại địa điểm của chúng tôi. Chúng tôi sẽ hân hạnh phục vụ bạn!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <section class="section section-gallery">
+        <div class="container">
+            <div class="hot_sp" style="padding-top: 70px;padding-bottom: 50px;">
+                <h2 style="text-align:center;padding-top: 10px">
+                    <a style="font-size: 28px;color: black;text-decoration: none" href="">Khách hàng và Booking Restaurant</a>
+                </h2>
+            </div>
+            <div class="list-gallery clearfix">
+                <ul class="shoes-gp">
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="{{ url_for('static', filename='images/shoes/gallery_item_1.jpg') }}" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="{{ url_for('static', filename='images/shoes/gallery_item_2.jpg') }}" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="{{ url_for('static', filename='images/shoes/gallery_item_3.jpg') }}" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="{{ url_for('static', filename='images/shoes/gallery_item_4.jpg') }}" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="{{ url_for('static', filename='images/shoes/gallery_item_5.jpg') }}" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gallery_item">
+                            <img class="img-resize" src="{{ url_for('static', filename='images/shoes/gallery_item_6.jpg') }}" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-col footer-block">
+                        <h4 class="footer-title">Giới thiệu</h4>
+                        <div class="footer-content">
+                            <p>"Booking Restaurant - giúp những cuộc hẹn trở nên dễ dàng và nhanh chóng hơn"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-col footer-block">
+                        <h4 class="footer-title">Thông tin liên hệ</h4>
+                        <div class="footer-content toggle-footer">
+                            <ul>
+                                <li><span>Địa chỉ:</span> Đống Đa, Hà Nội</li>
+                                <li><span>Điện thoại:</span> 0337628003</li>
+                                <li><span>Mail:</span> bookingrestaurant@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-col footer-block">
+                        <h4 class="footer-title">FANPAGE</h4>
+                        <div class="footer-content">
+                            <div id="fb-root"></div>
+                            <div class="footer-static-content">
+                                <div class="fb-page" data-href="https://www.facebook.com/yourfacebookpage" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                    <blockquote cite="https://www.facebook.com/yourfacebookpage" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/yourfacebookpage">Booking Restaurant</a></blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-4s+ctzRvoKURcZLl6ciY5id1I8u05b8E2zBcd6P2a0/XG1bPPpLsuUpnRvfhRj8Y" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

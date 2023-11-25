@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Bookingneu.com</title>
+    <style>
+                .d-flex {
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-calendar-alt"></i> Bookingneu.com
+        </a>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Image and Form side-by-side -->
+
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <!-- <div class="card-header bg-danger text-white">
+                        <h1 class="text-center"><i class="fas fa-calendar-alt"></i> Booking Form</h1>
+                    </div> -->
+                    <div class="card-body">
+                        <form method="POST" action="{{ url_for('routes.booking') }}">
+                            <div class="form-group">
+                                <label for="name"><i class="fas fa-user"></i> Họ và Tên:</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="sdt"><i class="fas fa-phone"></i> Số Điện Thoại:</label>
+                                <input type="tel" class="form-control" id="sdt" name="sdt" required>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+        
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="songuoi"><i class="fas fa-users"></i> Số người:</label>
+                                    <select class="form-control" id="songuoi" name="songuoi" required>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+        
+                                <div class="form-group col-md-6">
+                                    <label for="soban"><i class="fas fa-chair"></i> Số bàn:</label>
+                                    <select class="form-control" id="soban" name="soban" required>
+                                        {% for i in range (0,100) %}
+                                        <option value="{{i}}">{{i}}</option>
+                                        {% endfor %}
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                            </div>
+        
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="ngaybook"><i class="far fa-calendar-alt"></i> Ngày Đặt:</label>
+                                    <input type="date" class="form-control" id="ngaybook" name="ngaybook" required>
+                                </div>
+        
+                                <div class="form-group col-md-6">
+                                    <label for="giobook"><i class="far fa-clock"></i> Giờ đặt:</label>
+                                    <input type="time" class="form-control" id="giobook" name="giobook" required>
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="nhahang"><i class="fas fa-utensils"></i> Nhà Hàng:</label>
+                                <select class="form-control" id="nhahang" name="nhahang" required>
+                                    <option value="Nhà Hàng A">Nhà Hàng A</option>
+                                    <option value="Nhà Hàng B">Nhà Hàng B</option>
+                                    <option value="Nhà Hàng C">Nhà Hàng C</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
+        
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-danger"><i class="fas fa-book"></i> Book Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <img src="../static/images/370067960_657653793190797_8104736839372765140_n.jpg" alt="Booking Image" class="img-fluid" style="height: 74%; width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Add Font Awesome script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html>

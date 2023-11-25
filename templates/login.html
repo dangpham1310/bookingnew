@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Log In</h1>
+    <img src="../static/images/cat.jpg" alt="Cute Cat Image"/>
+    <form action="{{ url_for('routes.login') }}" method="post">
+      <input type="email" name="txt_email" placeholder="Email">
+      <input type="password" name="txt_password" placeholder="Password">
+      <input type="submit" value="Log In">
+    </form>
+    <p>
+      <a href="#">Forgot Password?</a>
+    </p>
+    <p>
+      <a href="#">Don't have an account? Sign Up</a>
+    </p>
+  </div>
+</body>
+</html>
+
+
+
